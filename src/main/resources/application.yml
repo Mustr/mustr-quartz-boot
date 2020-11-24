@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  
+spring:
+    datasource:
+        name: datasource
+        #driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        #url: jdbc:sqlserver://192.168.1.33;DatabaseName=ljx_SuiteV10
+        #username: sa
+        #password: dascom
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.1.54/quartz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+        username: root
+        password: dascom
+                    # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        # filters: stat
+        maxActive: 300
+        initialSize: 10
+        maxWait: 60000
+        minIdle: 10
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+           
